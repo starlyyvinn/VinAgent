@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle sidebar function
     function toggleSidebar() {
         if (!chatSidebar || !sidebarOverlay) return;
+        
         chatSidebar.classList.toggle('open');
         sidebarOverlay.classList.toggle('active');
         
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close sidebar function
     function closeSidebar() {
         if (!chatSidebar || !sidebarOverlay) return;
+        
         chatSidebar.classList.remove('open');
         sidebarOverlay.classList.remove('active');
         document.body.style.overflow = '';
@@ -114,6 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (chatSidebar) chatSidebar.classList.remove('open');
             if (sidebarOverlay) sidebarOverlay.classList.remove('active');
             document.body.style.overflow = '';
+        }
+    });
+
+    // Close sidebar with ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && window.innerWidth <= 768) {
+            closeSidebar();
         }
     });
 
