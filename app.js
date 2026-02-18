@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const API_URL = "192.168.56.1"
+    const API_URL = "192.168.56.1:3000"
 
     // ============= SIDEBAR FUNCTIONS =============
     
