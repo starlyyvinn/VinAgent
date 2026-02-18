@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const API_URL = "192.168.56.1"
+
     // ============= SIDEBAR FUNCTIONS =============
     
     // Toggle sidebar function
