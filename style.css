@@ -1552,3 +1552,122 @@ input:focus {
 .dark-mode .sidebar-overlay {
     background: rgba(0, 0, 0, 0.7);
 }
+
+/* ============= MOBILE FULL SCREEN FIX ============= */
+@media (max-width: 768px) {
+    /* Pastikan full screen */
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .chat-fullscreen {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    /* Sidebar positioning */
+    .chat-sidebar {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        width: 280px;
+        height: 100vh;
+        background: #f8f8fa;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .chat-sidebar.open {
+        left: 0;
+    }
+    
+    /* Overlay */
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+    
+    .sidebar-overlay.active {
+        display: block;
+    }
+    
+    /* Header adjustments */
+    .chat-header {
+        padding: 8px 12px;
+    }
+    
+    .header-left {
+        gap: 8px;
+    }
+    
+    .sidebar-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    /* Model selector mobile */
+    .model-name {
+        display: none;
+    }
+    
+    .model-btn {
+        padding: 6px 10px;
+    }
+    
+    /* Messages */
+    .message-row {
+        max-width: 90%;
+    }
+    
+    /* Quick actions scrollable */
+    .quick-actions {
+        padding: 10px 12px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        gap: 6px;
+    }
+    
+    .quick-action-btn {
+        flex-shrink: 0;
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+    
+    /* Input area */
+    .chat-input-area {
+        padding: 12px;
+    }
+    
+    .chat-input-container {
+        gap: 8px;
+    }
+    
+    .send-btn {
+        width: 48px;
+        height: 48px;
+    }
+}
